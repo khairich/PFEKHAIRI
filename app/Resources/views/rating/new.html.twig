@@ -1,0 +1,32 @@
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js')}} "></script>
+    <script type="text/javascript" src="{{ asset('assets/js/custom/rating.js')}} "> </script>
+    <link rel="stylesheet"  href="{{ asset('assets/css/rating.css') }} " type="text/css" media="screen" title="Rating CSS">
+    <script type="text/javascript"> 
+        $(function(){
+        $('.container').rating();
+                    });
+    </script>
+{% endblock %}
+{% block content %}
+<center>
+  {{ form_start (form) }}
+                {# {{ form_label(form.vote,'Vote') }} #}
+                {# <section class="container">
+        <input type="radio" name="example" class="rating" value="1" />
+        <input type="radio" name="example" class="rating" value="2" />
+        <input type="radio" name="example" class="rating" value="3" />
+        <input type="radio" name="example" class="rating" value="4" />
+        <input type="radio" name="example" class="rating" value="5" />
+ </section> #}
+ 
+
+                {{ form_widget(form.vote,{'attr':{'class':'container'}}) }}
+                {{ form_errors(form.vote) }} 
+                <input type="submit" value="Create"/>
+                 {{ form_end(form) }}            
+<ul>
+        <a href="{{ path('rating_index') }}">Back to the list</a>
+    </ul>
+</center>
+{% endblock %}

@@ -1,0 +1,15 @@
+khairi_sn_esprit_competence:
+    resource: "@KhairiSNEspritBundle/Resources/config/routing/competence.yml"
+    prefix:   /competence
+
+khairi_sn_esprit_skill:
+    resource: "@KhairiSNEspritBundle/Resources/config/routing/skill.yml"
+    prefix:   /skill
+
+khairi_sn_esprit_entreprise:
+    resource: "@KhairiSNEspritBundle/Resources/config/routing/entreprise.yml"
+    prefix:   /entreprise
+
+khairi_sn_esprit_homepage:
+    path:     /
+    defaults: { _controller: KhairiSNEspritBundle:Default:index }

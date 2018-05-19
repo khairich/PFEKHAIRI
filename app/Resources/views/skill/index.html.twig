@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Skills list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Symfony</th>
+                <th>Java</th>
+                <th>Angular</th>
+                <th>Php</th>
+                <th>Html</th>
+                <th>C</th>
+                <th>Ajax</th>
+                <th>Css</th>
+                <th>Linux</th>
+                <th>J2ee</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for skill in skills %}
+            <tr>
+                <td><a href="{{ path('skill_show', { 'id': skill.id }) }}">{{ skill.id }}</a></td>
+                <td>{% if skill.symfony %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.java %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.angular %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.pHP %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.html %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.c %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.ajax %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.css %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.linux %}Yes{% else %}No{% endif %}</td>
+                <td>{% if skill.j2EE %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('skill_show', { 'id': skill.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('skill_edit', { 'id': skill.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('skill_redirect') }}">Create a new skill</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+rating_index:
+    path:     /
+    defaults: { _controller: "GroupesSNBundle:Rating:index" }
+    methods:  GET
+
+rating_show:
+    path:     /{id}/show
+    defaults: { _controller: "GroupesSNBundle:Rating:show" }
+    methods:  GET
+
+rating_new:
+    path:     /new
+    defaults: { _controller: "GroupesSNBundle:Rating:new" }
+    methods:  [GET, POST]
+
+rating_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GroupesSNBundle:Rating:edit" }
+    methods:  [GET, POST]
+
+rating_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GroupesSNBundle:Rating:delete" }
+    methods:  DELETE

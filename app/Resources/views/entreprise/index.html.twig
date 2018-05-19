@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entreprises list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Identreprise</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entreprise in entreprises %}
+            <tr>
+                <td><a href="{{ path('entreprise_show', { 'id': entreprise.id }) }}">{{ entreprise.id }}</a></td>
+                <td>{{ entreprise.idEntreprise }}</td>
+                <td>{{ entreprise.status }}</td>
+                <td>{% if entreprise.date %}{{ entreprise.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('entreprise_show', { 'id': entreprise.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('entreprise_edit', { 'id': entreprise.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+        {% if etudiant.role == 'ROLE_ADMIN' %}
+         <a href="{{ path('entreprise_new') }}">Create a new entreprise</a>
+ <a href="{{ path('entreprise_index') }}"></a>
+ {% endif %}
+        </li>
+    </ul>
+{% endblock %}
