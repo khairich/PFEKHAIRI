@@ -56,19 +56,56 @@ class __TwigTemplate_ded85d833e1c911d6bcfc14901c9a1eaa96151f7293bbbd90942c8cf326
         echo "</td>
             </tr>
             <tr>
-                <th>Status</th>
+                <th>Background</th>
                 <td>";
         // line 18
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "status", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "background", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Date</th>
+                <th>Earlieststartdate</th>
                 <td>";
         // line 22
-        if ($this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "date", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "date", array()), "Y-m-d"), "html", null, true);
+        if ($this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "earliestStartDate", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "earliestStartDate", array()), "Y-m-d"), "html", null, true);
         }
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Latestenddate</th>
+                <td>";
+        // line 26
+        if ($this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "latestEndDate", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "latestEndDate", array()), "Y-m-d"), "html", null, true);
+        }
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>";
+        // line 30
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "salary", array()), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Positions</th>
+                <td>";
+        // line 34
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "positions", array()), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                <td>";
+        // line 38
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "skills", array()), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Languages</th>
+                <td>";
+        // line 42
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "languages", array()), "html", null, true);
         echo "</td>
             </tr>
         </tbody>
@@ -77,24 +114,24 @@ class __TwigTemplate_ded85d833e1c911d6bcfc14901c9a1eaa96151f7293bbbd90942c8cf326
     <ul>
         <li>
             <a href=\"";
-        // line 29
+        // line 49
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("entreprise_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             <a href=\"";
-        // line 32
+        // line 52
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("entreprise_edit", array("id" => $this->getAttribute((isset($context["entreprise"]) ? $context["entreprise"] : $this->getContext($context, "entreprise")), "id", array()))), "html", null, true);
         echo "\">Edit</a>
         </li>
         <li>
             ";
-        // line 35
+        // line 55
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 37
+        // line 57
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
         </li>
@@ -117,7 +154,7 @@ class __TwigTemplate_ded85d833e1c911d6bcfc14901c9a1eaa96151f7293bbbd90942c8cf326
 
     public function getDebugInfo()
     {
-        return array (  98 => 37,  93 => 35,  87 => 32,  81 => 29,  69 => 22,  62 => 18,  55 => 14,  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  135 => 57,  130 => 55,  124 => 52,  118 => 49,  108 => 42,  101 => 38,  94 => 34,  87 => 30,  78 => 26,  69 => 22,  62 => 18,  55 => 14,  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -146,12 +183,32 @@ class __TwigTemplate_ded85d833e1c911d6bcfc14901c9a1eaa96151f7293bbbd90942c8cf326
                 <td>{{ entreprise.idEntreprise }}</td>
             </tr>
             <tr>
-                <th>Status</th>
-                <td>{{ entreprise.status }}</td>
+                <th>Background</th>
+                <td>{{ entreprise.background }}</td>
             </tr>
             <tr>
-                <th>Date</th>
-                <td>{% if entreprise.date %}{{ entreprise.date|date('Y-m-d') }}{% endif %}</td>
+                <th>Earlieststartdate</th>
+                <td>{% if entreprise.earliestStartDate %}{{ entreprise.earliestStartDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Latestenddate</th>
+                <td>{% if entreprise.latestEndDate %}{{ entreprise.latestEndDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{ entreprise.salary }}</td>
+            </tr>
+            <tr>
+                <th>Positions</th>
+                <td>{{ entreprise.positions }}</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                <td>{{ entreprise.skills }}</td>
+            </tr>
+            <tr>
+                <th>Languages</th>
+                <td>{{ entreprise.languages }}</td>
             </tr>
         </tbody>
     </table>
